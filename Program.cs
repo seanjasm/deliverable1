@@ -9,6 +9,7 @@ namespace Deliverable1
         {
             double num1 = 0, num2 = 0, num3 = 0;
             NumberOperation numberOperation = new NumberOperation();
+            int numberErrorCounter = 0;//keeps track of user error input
             
 
             try
@@ -17,16 +18,46 @@ namespace Deliverable1
                 {
                     Console.Clear();
 
-                    Console.Write("\nEnter first number then press ENTER: ");
-                    num1 = Convert.ToDouble(Console.ReadLine());
+                    numberErrorCounter = 0; //set counter to zero if user decides to continue
 
-                    Console.Write("\nEnter second number then press ENTER: ");
-                    num2 = Convert.ToDouble(Console.ReadLine());
+                    do
+                    {
+                        if (numberErrorCounter > 0)//display message if user error
+                            Console.WriteLine("\n\nUser input error. Please try again.");
 
-                    Console.Write("\nEnter third number then press ENTER: ");
-                    num3 = Convert.ToDouble(Console.ReadLine());
+                        Console.Write("\n\nEnter first number then press ENTER: ");
 
-                    numberOperation = new NumberOperation(num1, num2, num3);
+                        numberErrorCounter++;//increments counter to display error message if user made an error
+
+                    } while (!double.TryParse(Console.ReadLine(), out num1));//loop continues while number is not of double or floating type
+
+                    numberErrorCounter = 0;//set counter back to zero
+
+                    do
+                    {
+                        if (numberErrorCounter > 0)//display message if user error
+                            Console.WriteLine("\n\nUser input error. Please try again.");
+
+                        Console.Write("\n\nEnter second number then press ENTER: ");
+
+                        numberErrorCounter++;//increments counter to display error message if user made an error
+
+                    } while (!double.TryParse(Console.ReadLine(), out num2));//loop continues while number is not of double or floating type
+
+                    numberErrorCounter = 0;//set counter back to zero
+
+                    do
+                    {
+                        if (numberErrorCounter > 0)//display message if user error
+                            Console.WriteLine("\n\nUser input error. Please try again.");
+
+                        Console.Write("\n\nEnter third number then press ENTER: ");
+
+                        numberErrorCounter++;//increments counter to display error message if user made an error
+
+                    } while (!double.TryParse(Console.ReadLine(), out num3));//loop continues while number is not of double or floating type
+
+                    numberOperation = new NumberOperation(num1, num2, num3);//construct accepts all 3 numbers
 
                     Console.WriteLine("\n\nHighest Number          Lowest Number          Average          ");
 
@@ -43,7 +74,7 @@ namespace Deliverable1
 
                     Console.Write("\n\n\nDo you want to continue?[N]:");
 
-                } while (Console.ReadLine().ToLower() == "y");
+                } while (Console.ReadLine().ToLower() == "y");//Loop while user wants to continue
 
             } catch
             {

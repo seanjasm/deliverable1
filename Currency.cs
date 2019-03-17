@@ -2,7 +2,7 @@
 
 namespace Deliverable1
 {
-    enum currencyType { USD, Japanese, Thai, Swedish };
+    enum currencyType { USD, Japanese, Thai, Swedish };//enum of currency to help with readability
 
     class NumberOperation
     {
@@ -21,32 +21,40 @@ namespace Deliverable1
             number1 = number2 = number3 = 0;
         }
 
+        //returns a formatted currency based on a speific culture
         public string GetCurrencyByType(currencyType ctype)
         {
             switch (ctype)
             {
                 case currencyType.Swedish:
                     {
-                        return sum.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("sv-SE"));
+                        //formats currency to 2 decimal places
+                        return sum.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("sv-SE"));
                     }
                 case currencyType.Japanese:
                     {
-                        return sum.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("ja-JP"));
+                        //formats currency to no decimal place
+                        return sum.ToString("C0", System.Globalization.CultureInfo.CreateSpecificCulture("ja-JP"));
                     }
                 case currencyType.USD:
                     {
+                        //formats currency to 2 decimal places
                         return sum.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("en-US"));
                     }
                 case currencyType.Thai:
                     {
-                        return sum.ToString("C", System.Globalization.CultureInfo.CreateSpecificCulture("th-TH"));
+                        //formats currency to 2 decimal places
+                        return sum.ToString("C2", System.Globalization.CultureInfo.CreateSpecificCulture("th-TH"));
                     }
                 default:
-                    return "";
+                    return "";//added as reduncy because will not reach this section
             }
 
         }
 
+        //this function sets number1 as smallest. If number2 is smaller then number2 is smallest 
+        //else if number3 is smaller than smallest number3 is set as smallest
+        //finally, returns the smallest
         public double GetSmallestNumber()
         {
             double smallest = number1;
@@ -65,6 +73,9 @@ namespace Deliverable1
             return smallest;
         }
 
+        //this function sets number1 as largest. If number2 is larger then number2 is largest 
+        //else if number3 is larger than largest number3 is set as largest
+        //finally returns largest
         public double GetLargestNumber()
         {
             double largest = number1;
@@ -83,6 +94,7 @@ namespace Deliverable1
             return largest;
         }
 
+        //returns the average
         public double GetAverage()
         {
             return (number1 + number2 + number3)/3;

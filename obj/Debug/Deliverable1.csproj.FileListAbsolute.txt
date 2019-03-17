@@ -4,3 +4,10 @@ c:\users\user\source\repos\DeliverableOne\Deliverable1\bin\Debug\Deliverable1.pd
 c:\users\user\source\repos\DeliverableOne\Deliverable1\obj\Debug\Deliverable1.csproj.CoreCompileInputs.cache
 c:\users\user\source\repos\DeliverableOne\Deliverable1\obj\Debug\Deliverable1.exe
 c:\users\user\source\repos\DeliverableOne\Deliverable1\obj\Debug\Deliverable1.pdb
+C:\Users\User\Documents\GrandCircus\Deliverable1\bin\Debug\Deliverable1.exe.config
+C:\Users\User\Documents\GrandCircus\Deliverable1\bin\Debug\Deliverable1.exe
+C:\Users\User\Documents\GrandCircus\Deliverable1\bin\Debug\Deliverable1.pdb
+C:\Users\User\Documents\GrandCircus\Deliverable1\obj\Debug\Deliverable1.csprojAssemblyReference.cache
+C:\Users\User\Documents\GrandCircus\Deliverable1\obj\Debug\Deliverable1.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GrandCircus\Deliverable1\obj\Debug\Deliverable1.exe
+C:\Users\User\Documents\GrandCircus\Deliverable1\obj\Debug\Deliverable1.pdb
